@@ -1,5 +1,6 @@
 import React from 'react';
 import {BrowserRouter, Route} from 'react-router-dom';
+import Login from './Login/Login';
 
 const PageOne = () => {
     return <div>Page One </div>;
@@ -23,7 +24,7 @@ class App extends React.Component {
                 <div>
                     <BrowserRouter>
                         <div>
-                            <Route path="/" exact component={PageOne}/>
+                            <Route path="/" exact component={Login}/>
                             <Route path="/login" exact component={PageTWo}/>
                         </div>
                     </BrowserRouter>

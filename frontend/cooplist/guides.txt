@@ -8,3 +8,6 @@ Dumb and Smart components:
 https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0
 
 Checkaa: react Prop Types
+
+REACT INDETPSH GUIDE
+https://www.freecodecamp.org/news/learn-webpack-for-react-a36d4cac5060/

@@ -1,0 +1,216 @@
+
+html {
+    font-size: 62.5% ; /*relative to font size by browser, käytätä userin, default 16px */
+    /*default on 16px, joten 62.5% 16:sta on 10px lopulliseen, jos käyttäjä nostaa enemmän niin s nousee mukana*/
+
+}
+
+*, *::after, *::before {
+    padding:0;
+    margin:0;
+     box-sizing:inherit; /*forcee inheritance */
+}
+
+/* Pistetään font family bodyyn */
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    /*font-size: 1.6 rem;*/
+    line-height:1.7; /*1,7 isompi kuin predefined line height*/
+    color: #252525;
+    box-sizing: border-box; /*Border height ja width ei lisätä kokoon??*/
+    background-color: rgb(27, 27, 27);
+}
+
+.header {
+    height: 100vh; /* 95% view heightistä */
+    background-image: linear-gradient(to right bottom,rgba(62, 53, 78, 0.816), #05113bb6), url('./img/coopbg.jpg');
+    background-size: cover; /*fittaa elementin viewiin */
+    background-position: top;
+    clip-path: polygon(0 8%, 100% 8%, 100% 75%, 0 75%);
+    position: relative;
+
+}
+
+.logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+}
+
+.logo {
+    height: 3.5rem;
+}
+
+.heading-primary {
+    color:#fff;
+    text-transform:uppercase;
+    backface-visibility: hidden; /* fiksaa jonkun jutun animaatioissa*/
+}
+
+.heading-primary-main {
+    display:block;
+    font-size:5rem;
+    font-weight:700;
+    letter-spacing: 3rem;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-iteration-count:1;
+    animation-timing-function: ease-out;
+    animation-delay:0.3s;
+}
+
+.heading-primary-sub {
+    display:block;
+    font-size:1.5rem;
+    font-weight:400;
+    letter-spacing:1.5rem;
+
+    animation-name: moveInRight;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-delay: 0.3s;
+    text-align:center;
+
+
+}
+
+.text-box{
+    position: absolute;
+    text-align:center;
+    top: 35%;
+    left: 50%;
+    transform:  translate(-50%,-50%); /*-50% on elementin koosta,*/
+}
+
+.orange{
+    color:rgb(255, 132, 0);
+    font-weight:800;
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+
+    50% {
+        transform: translateX(1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0rem);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(10rem);
+    }
+
+    50% {
+        transform: translateX(-1rem)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+.login-input-container {
+    margin-top:1.5rem;
+}
+
+/*link pseudo class: special state*/
+.btn:link, .btn:visited {
+    padding:0.5rem;
+    box-shadow: 0 2rem 1rem rgba(0,0,0,.2);
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display:inline-block;
+    margin-top:2rem;
+    border-radius:10rem;
+    transition: all .2s; /*all properties animated, eli nyt kun translatetaan niin se kestää 0.2s transition pitää olla initial statessa*/
+    position:relative;
+}
+
+.btn:hover {
+   background-color:rgb(92, 92, 130);
+   box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
+}
+
+.btn:active {
+    transform: translateY(-0.5rem);
+    
+}
+
+.btn-white{
+    color:white;
+    background-color: rgb(30, 34, 79);
+}
+
+.btn::after {
+    content: ""/*content aina oltava*/;
+    display: inline-block; /*tämäkin, laitetaan samaksi kuin button*/
+    height:100%;
+    width:100%; /*sama koko kuin emolla */
+    border-radius:10rem;
+    position:absolute;
+    top: 0;
+    left:0;
+    z-index: -1;
+    transition:all 0.2s;
+}
+
+.btn-white::after {
+    background-color: rgb(30, 34, 79);
+}
+
+
+.btn:hover::after {
+    transform: scaleX(1.5); /*double the size*/
+    opacity:0;
+}
+
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translate(3rem);
+    }
+
+    100% {
+        opacity:1;
+        transform: translate(0);
+        animation-fill-mode:backwards;
+    }
+}
+
+.login-input::placeholder {
+
+    font-family: monospace,sans-serif;
+    color:rgb(225, 191, 143);
+    text-align:center;
+}
+
+.login-input:focus {
+    border:0rem;
+    outline: none;
+}
+
+.login-input {
+    border-radius: 0.5rem;
+    border: 0rem;
+    background-color:rgba(35, 43, 62,0);
+    color:orange;
+    padding:1rem;
+    display:inline-block;
+    font-family: monospace,sans-serif;
+    text-align:center;
+    margin:0.5rem;
+}
