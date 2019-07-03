@@ -11,3 +11,6 @@ Checkaa: react Prop Types
 
 REACT INDETPSH GUIDE
 https://www.freecodecamp.org/news/learn-webpack-for-react-a36d4cac5060/
+
+
+https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-server-blocks-virtual-hosts-on-ubuntu-16-04
